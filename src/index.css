@@ -1,0 +1,152 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* SoMa Art Media Hub — eclectic, artist-driven design system */
+
+@layer base {
+  :root {
+    /* Warm cream, sun-bleached adobe */
+    --background: 36 45% 94%;
+    --foreground: 15 35% 12%;
+
+    --card: 36 50% 97%;
+    --card-foreground: 15 35% 12%;
+
+    --popover: 36 50% 97%;
+    --popover-foreground: 15 35% 12%;
+
+    /* Deep terracotta / barro */
+    --primary: 10 78% 46%;
+    --primary-foreground: 36 50% 97%;
+
+    /* Sun yellow / amarillo */
+    --secondary: 44 95% 58%;
+    --secondary-foreground: 15 40% 12%;
+
+    --muted: 36 25% 88%;
+    --muted-foreground: 15 18% 38%;
+
+    /* Cobalt / azulejo */
+    --accent: 218 78% 42%;
+    --accent-foreground: 36 50% 97%;
+
+    /* Fuchsia / buganvilia */
+    --highlight: 332 78% 50%;
+    --highlight-foreground: 36 50% 97%;
+
+    /* Cactus green / nopal */
+    --jade: 158 45% 30%;
+    --jade-foreground: 36 50% 97%;
+
+    /* Deep espresso ink */
+    --ink: 18 35% 12%;
+    --ink-foreground: 36 50% 96%;
+
+    --destructive: 0 78% 48%;
+    --destructive-foreground: 36 50% 97%;
+
+    --border: 24 25% 82%;
+    --input: 24 25% 82%;
+    --ring: 10 78% 46%;
+
+    --radius: 1rem;
+
+    --gradient-hero: linear-gradient(135deg, hsl(10 78% 46%) 0%, hsl(332 78% 50%) 55%, hsl(44 95% 58%) 100%);
+    --gradient-warm: linear-gradient(120deg, hsl(44 95% 58% / 0.2), hsl(10 78% 46% / 0.12) 60%, hsl(218 78% 42% / 0.1));
+    --gradient-ink: linear-gradient(180deg, hsl(218 55% 16%), hsl(218 60% 10%));
+
+    --shadow-art: 0 24px 60px -22px hsl(10 78% 46% / 0.4);
+    --shadow-soft: 0 12px 32px -14px hsl(18 35% 12% / 0.2);
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 218 40% 9%;
+    --foreground: 36 45% 94%;
+    --card: 218 35% 12%;
+    --card-foreground: 36 45% 94%;
+    --popover: 218 35% 12%;
+    --popover-foreground: 36 45% 94%;
+    --primary: 10 85% 58%;
+    --primary-foreground: 218 40% 9%;
+    --secondary: 44 95% 62%;
+    --secondary-foreground: 218 40% 9%;
+    --muted: 218 25% 18%;
+    --muted-foreground: 36 25% 72%;
+    --accent: 218 85% 60%;
+    --accent-foreground: 218 40% 9%;
+    --highlight: 332 82% 62%;
+    --highlight-foreground: 218 40% 9%;
+    --jade: 158 50% 48%;
+    --jade-foreground: 218 40% 9%;
+    --ink: 36 45% 94%;
+    --ink-foreground: 218 40% 9%;
+    --destructive: 0 72% 55%;
+    --destructive-foreground: 36 45% 94%;
+    --border: 218 25% 22%;
+    --input: 218 25% 22%;
+    --ring: 10 85% 58%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'DM Sans', 'Inter', system-ui, sans-serif;
+  }
+  h1, h2, h3, h4 {
+    font-family: 'Fraunces', 'Playfair Display', Georgia, serif;
+    letter-spacing: -0.025em;
+  }
+}
+
+@layer utilities {
+  .bg-gradient-hero { background: var(--gradient-hero); }
+  .bg-gradient-warm { background: var(--gradient-warm); }
+  .bg-gradient-ink { background: var(--gradient-ink); }
+  .shadow-art { box-shadow: var(--shadow-art); }
+  .shadow-soft { box-shadow: var(--shadow-soft); }
+  .text-balance { text-wrap: balance; }
+
+  .paper-texture {
+    background-image:
+      radial-gradient(hsl(var(--ink) / 0.05) 1px, transparent 1px),
+      radial-gradient(hsl(var(--ink) / 0.035) 1px, transparent 1px);
+    background-size: 24px 24px, 40px 40px;
+    background-position: 0 0, 12px 12px;
+  }
+
+  .talavera {
+    background-image:
+      radial-gradient(circle at 50% 50%, hsl(var(--accent) / 0.18) 0 5px, transparent 6px),
+      radial-gradient(circle at 0 0, hsl(var(--primary) / 0.14) 0 4px, transparent 5px),
+      radial-gradient(circle at 100% 100%, hsl(var(--primary) / 0.14) 0 4px, transparent 5px),
+      linear-gradient(45deg, transparent 46%, hsl(var(--secondary) / 0.22) 46% 54%, transparent 54%),
+      linear-gradient(-45deg, transparent 46%, hsl(var(--secondary) / 0.22) 46% 54%, transparent 54%);
+    background-size: 48px 48px;
+  }
+}
+
+@keyframes float-slow {
+  0%, 100% { transform: translateY(0) rotate(var(--r, 0deg)); }
+  50% { transform: translateY(-14px) rotate(var(--r, 0deg)); }
+}
+.animate-float { animation: float-slow 7s ease-in-out infinite; }
+
+@keyframes brush-in {
+  from { clip-path: inset(0 100% 0 0); opacity: 0; }
+  to { clip-path: inset(0 0 0 0); opacity: 1; }
+}
+.animate-brush { animation: brush-in 1.2s cubic-bezier(.2,.7,.2,1) both; }
