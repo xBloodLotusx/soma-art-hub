@@ -1,4 +1,5 @@
 import { MapPin, Phone, Mail, Facebook, Star, Users, Sparkles, Palette, Pencil, Ruler, Layers, Droplet, Brush } from "lucide-react";
+import Gallery from "@/components/Gallery";
 
 const categories = [
   {
@@ -155,6 +156,19 @@ const Index = () => {
                 <Sparkles className="h-8 w-8" />
               </div>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Photos / Gallery */}
+      <section id="photos" className="py-20">
+        <div className="container">
+          <div className="mx-auto max-w-3xl text-center">
+            <span className="font-serif italic text-accent">— Gallery</span>
+            <h2 className="mt-3 font-serif text-4xl font-black leading-tight text-ink md:text-5xl">Captured work & shop highlights</h2>
+          </div>
+          <div className="mt-10">
+            <Gallery />
           </div>
         </div>
       </section>
