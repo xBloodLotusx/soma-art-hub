@@ -78,10 +78,7 @@ const Index = () => {
       </header>
 
       {/* Hero */}
-      <section className="relative overflow-hidden pt-28 pb-24 md:pt-36 md:pb-32">
-        <div className="absolute inset-0 bg-gradient-warm" />
-        <div className="absolute inset-0 talavera opacity-40" />
-        <div className="absolute inset-0 paper-texture opacity-50" />
+      <section className="relative pt-28 pb-24 md:pt-36 md:pb-32">
 
         {/* Floating paint swatches */}
         <div className="pointer-events-none absolute -left-10 top-40 h-28 w-28 rounded-full bg-primary/80 blur-2xl animate-float" style={{ ['--r' as string]: '-8deg' }} />
@@ -117,44 +114,14 @@ const Index = () => {
             </div>
           </div>
 
-          {/* Artistic placeholder collage */}
+          {/* Hero entrance photo */}
           <div className="relative lg:col-span-5">
-            <div className="relative mx-auto aspect-[4/5] w-full max-w-md">
-              <div className="absolute left-0 top-6 h-64 w-48 -rotate-6 rounded-2xl bg-primary shadow-art">
-                <div className="flex h-full flex-col justify-between p-5 text-primary-foreground">
-                  <span className="text-xs font-bold uppercase tracking-widest opacity-80">№ 01</span>
-                  <div>
-                    <div className="font-serif text-3xl font-black leading-none">Pigment</div>
-                    <div className="mt-1 text-xs opacity-80">Terracotta · 14</div>
-                  </div>
-                </div>
-              </div>
-              <div className="absolute right-0 top-0 h-56 w-44 rotate-6 rounded-2xl bg-ink shadow-art">
-                <div className="flex h-full flex-col justify-between p-5 text-ink-foreground">
-                  <Brush className="h-6 w-6 opacity-80" />
-                  <div>
-                    <div className="font-serif text-2xl font-black leading-none">Studio</div>
-                    <div className="mt-1 text-xs opacity-70">Since day one</div>
-                  </div>
-                </div>
-              </div>
-              <div className="absolute bottom-0 left-10 h-52 w-56 rotate-3 rounded-2xl bg-jade shadow-art">
-                <div className="flex h-full flex-col justify-between p-5 text-jade-foreground">
-                  <div className="flex gap-1">
-                    <span className="h-3 w-3 rounded-full bg-primary" />
-                    <span className="h-3 w-3 rounded-full bg-secondary" />
-                    <span className="h-3 w-3 rounded-full bg-accent" />
-                    <span className="h-3 w-3 rounded-full bg-highlight" />
-                  </div>
-                  <div>
-                    <div className="font-serif text-2xl font-black leading-none">Paleta</div>
-                    <div className="mt-1 text-xs opacity-80">Barro · Azulejo · Nopal</div>
-                  </div>
-                </div>
-              </div>
-              <div className="absolute -right-2 bottom-10 flex h-20 w-20 items-center justify-center rounded-full bg-highlight text-highlight-foreground shadow-art animate-float">
-                <Sparkles className="h-8 w-8" />
-              </div>
+            <div className="relative mx-auto aspect-[4/5] w-full max-w-md overflow-hidden rounded-2xl shadow-art">
+              <img
+                src={new URL("../assets/SoMaEntrance.jpeg", import.meta.url).href}
+                alt="SoMa Art Media Hub entrance"
+                className="h-full w-full object-cover"
+              />
             </div>
           </div>
         </div>

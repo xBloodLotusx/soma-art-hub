@@ -1,9 +1,9 @@
 import React from "react";
 
 const photos = [
-  "/photos/photo1.svg",
-  "/photos/photo2.svg",
-  "/photos/photo3.svg",
+  new URL("../assets/SoMaBooks.jpeg", import.meta.url).href,
+  new URL("../assets/SoMaOverview.jpeg", import.meta.url).href,
+  new URL("../assets/SoMaSupplies.jpeg", import.meta.url).href,
 ];
 
 const Gallery: React.FC = () => {
